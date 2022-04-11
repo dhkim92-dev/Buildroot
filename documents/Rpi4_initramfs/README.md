@@ -18,52 +18,52 @@ RAM 영역 일부 공간을 Root File System으로 이용합니다. 즉 모든 I
 * Linux System(윈도우 유저는 WSL을 이용)
 ------
 ## 절차
-	1. [Buildroot](https://buildroot.org/download.html) Download
-	2. Buildroot 의존성 패키지 설치  
-		* which
-		* sed
-		* make
-		* binutils
-		* build-essential(debian-based linux)
-		* Development Tools(RHEL-based linux)
-		* gcc
-		* g++
-		* bash
-		* patch
-		* gzip
-		* bzip2
-		* perl
-		* tar
-		* cpio
-		* unzip
-		* rsync
-		* file
-		* bc
-		* wget
-		* 상기 dependency 는 Ubuntu에서 sudo apt install <package name> 으로 설치 가능합니다.  
-		```bash
-		sudo apt install build-essential  
-		```
-		만일 Fedora, Rocky Linux, Redhat Linux 등을 이용중이라면 yum 또는 dnf 명령어로 설치 가능합니다.  
-		```bash
-		sudo dnf groupinstall "Development Tools" 
-		sudo yum groupinstall "Development Tools"
-		```
-	3. Buildroot Install  
-	다음과 같은 명령어로 다운로드한 buildroot 압축 파일을 해제합니다.  
+1. [Buildroot](https://buildroot.org/download.html) Download
+2. Buildroot 의존성 패키지 설치  
+	* which
+	* sed
+	* make
+	* binutils
+	* build-essential(debian-based linux)
+	* Development Tools(RHEL-based linux)
+	* gcc
+	* g++
+	* bash
+	* patch
+	* gzip
+	* bzip2
+	* perl
+	* tar
+	* cpio
+	* unzip
+	* rsync
+	* file
+	* bc
+	* wget
+	* 상기 dependency 는 Ubuntu에서 sudo apt install <package name> 으로 설치 가능합니다.  
 	```bash
-	tar -zxvf buildroot-<year>-<month>.tar.gz
+	sudo apt install build-essential  
 	```
-	4. 다음 명령어로 자신이 원하는 작업 경로로 이동합니다.
-	```
-	mv buildroot-<year>-<month>.tar.gz path/to/where/you/want/buildroot
-	```
-	5. 다음 명령어로 동적 라이브러리 경로를 초기화합니다. 
-	```
-	unset LD_LIBRARY_PATH
-	```
-	6. buildroot 구성 인터페이스를 실행합니다.
+	만일 Fedora, Rocky Linux, Redhat Linux 등을 이용중이라면 yum 또는 dnf 명령어로 설치 가능합니다.  
 	```bash
-	make menuconfig
+	sudo dnf groupinstall "Development Tools" 
+	sudo yum groupinstall "Development Tools"
 	```
+3. Buildroot Install  
+다음과 같은 명령어로 다운로드한 buildroot 압축 파일을 해제합니다.  
+```bash
+tar -zxvf buildroot-<year>-<month>.tar.gz
+```
+4. 다음 명령어로 자신이 원하는 작업 경로로 이동합니다.
+```bash
+mv buildroot-<year>-<month>.tar.gz path/to/where/you/want/buildroot
+```
+5. 다음 명령어로 동적 라이브러리 경로를 초기화합니다. 
+```
+unset LD_LIBRARY_PATH
+```
+6. buildroot 구성 인터페이스를 실행합니다.
+```bash
+make menuconfig
+```
 
