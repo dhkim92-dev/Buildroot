@@ -19,7 +19,7 @@ RAM 영역 일부 공간을 Root File System으로 이용합니다. 즉 모든 I
 ------
 ## 절차
 	1. [Buildroot](https://buildroot.org/download.html) Download
-	2. Buildroot Dependencies Install
+	2. Buildroot 의존성 패키지 설치  
 		* which
 		* sed
 		* make
