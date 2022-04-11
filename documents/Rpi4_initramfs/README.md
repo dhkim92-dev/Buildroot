@@ -203,8 +203,11 @@ esac
 #!/bin/sh
 #!파일명 path/to/buildroot/etc/init.d/S999Services
 NAME=Services
+export DOCKER_RAMDISK=true
 
 do_start() {
+	/etc/init.d/S60dockerd stop
+	/etc/init.d/S60dockerd start
 	mount /dev/mmcblk0p2 /media
 	docker-compose -f /media/docker-compose.yml up -d
 }
